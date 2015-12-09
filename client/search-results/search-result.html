@@ -1,0 +1,42 @@
+<template name="searchResults">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-heading-title">
+        {{searchResults.count}} Venues
+      </h4>
+      <button id="csv" class="btn btn-link pull-right"><i class="glyphicon glyphicon-open"></i> Download the CSV
+      </button>
+    </div>
+    <div class="panel-body">
+      <button id="clear-results" class="btn btn-xs btn-danger">Remove all</button>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Action</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Address</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+          </tr>
+          </thead>
+          <tbody>
+          {{#each searchResults}}
+            <tr>
+              <td>
+                <button class="btn btn-xs btn-danger delete-venues"><i class="glyphicon glyphicon-trash"></i></button>
+              </td>
+              <td>{{name}}</td>
+              <td>{{city}}</td>
+              <td>{{address}}</td>
+              <td>{{lat}}</td>
+              <td>{{lng}}</td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>

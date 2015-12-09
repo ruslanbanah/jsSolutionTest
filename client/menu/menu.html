@@ -1,0 +1,25 @@
+<template name="menu">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">JsSolution</a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="{{#if currentRouteIs 'homePage'}}active{{/if}}"><a href="{{pathFor route='homePage'}}">About</a></li>
+        {{#if isLogged}}
+          <li class="{{#if currentRouteIs 'searchPage'}}active{{/if}}"><a
+            href="{{pathFor route='searchPage'}}">Search</a></li>
+        {{/if}}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {{> loginButtons}} <!-- here -->
+      </ul>
+    </div>
+  </div>
+</template>
